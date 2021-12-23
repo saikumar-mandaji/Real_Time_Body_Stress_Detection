@@ -72,7 +72,7 @@ background-color: #2EE59D;
     <a href="/">
         <button href="#" class="home">HOME</button>
         </a>
-    <form method="POST" action="/signup" enctype="multipart/form-data">
+    <form id="fm" method="POST" action="/signup" enctype="multipart/form-data">
         <div class="container">
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" id="uname" name="uname">
@@ -89,16 +89,24 @@ background-color: #2EE59D;
         var user = document.getElementById("uname").value;
         var pw1 = document.getElementById("pwd1").value;
         var pw2 = document.getElementById("pwd2").value;
-        console.log(user);5
-        console.log(pw1);
-        console.log(pw1.length);
-        if(user.length < 1 || pw1.length < 1 || pw2.length < 1 ){
+        if(user.length < 1 || pw1.length < 4 || pw2.length < 4 ){
             alert("Invalid Username or password");
             location.reload();
         }
-        document.getElementById("uname").value;
-        document.getElementById("uname").value;
-        document.getElementById("uname").value;
+        else{
+            if(pw1 == pw2){
+                console.log("got credentials");
+                document.getElementById("fm").submit();
+            }
+            else{
+                alert("Invalid password");
+                location.reload();
+            }
+        }
+        
+        document.getElementById("uname").value = "";
+        document.getElementById("pwd1").value = "";
+        document.getElementById("pwd2").value = "";
         
     }
 </script>

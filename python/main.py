@@ -25,7 +25,7 @@ def signup():
     if request.method=="POST":
         print(request.form.get)
 
-        return ""
+        return render_template('home.html')
 
 # kwargs = {'host': '0.0.0.0', 'port': 8080, 'threaded': True, 'use_reloader': False, 'debug': True}
 # if __name__ == '__main__':
