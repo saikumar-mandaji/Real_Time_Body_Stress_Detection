@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<style>
+body {
+  background-color: #ffffffff;
+  padding-top: 10px;
+}
+h1 {color:blue}
+
+button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+</style>
+<body> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div style="text-align:center">
+<span">
+    <br>
+    <br>
+    <h1><img src="{{ url_for('video_feed') }}" width="50%"></h1>
+	<br>
+    <br>
+    <a href="/">
+        <button href="#" class="button1">HOME</button>
+    </a>
+</span>
+</body>
+</html>

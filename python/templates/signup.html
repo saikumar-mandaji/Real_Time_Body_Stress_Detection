@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<style>
+    /*set border to the form*/
+      body {
+  background-color: #ffffffff;
+  padding-top: 50px;
+  align-content: center;
+}
+    form {
+        border: 3px solid #f1f1f1;
+    }
+    /*assign full width inputs*/
+      
+    input[type=text] ,
+    input[type=password] 
+    {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgb(41, 38, 38);
+        box-sizing: border-box;
+    }
+    .home {
+        background-color: #af744c;
+        margin: 0;
+        cursor: pointer;
+        width: 20%;
+        position: sticky;
+        
+    }
+
+
+    
+button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+button:active{
+background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(7px);
+}
+
+      
+</style>
+  
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="/">
+        <button href="#" class="home">HOME</button>
+        </a>
+    <form method="POST" action="/signup" enctype="multipart/form-data">
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" name="uname">
+            <label for="pwd">Password:</label>
+            <input type="password" placeholder="Enter Password"id="pwd1" name="pwd">
+            <label for="pwd"></label>
+            <input type="password" placeholder="Confirm Password"id="pwd2" name="pwd">
+            <button type="button" onclick="return verify()">UPLOAD</button>
+        </div>
+    </form>
+</body>  
+<script>
+    function verify(){
+        var user = document.getElementById("uname").value;
+        var pw1 = document.getElementById("pwd1").value;
+        var pw2 = document.getElementById("pwd2").value;
+        console.log(user);5
+        console.log(pw1);
+        console.log(pw1.length);
+        if(user.length < 1 || pw1.length < 1 || pw2.length < 1 ){
+            alert("Invalid Username or password");
+            location.reload();
+        }
+        document.getElementById("uname").value;
+        document.getElementById("uname").value;
+        document.getElementById("uname").value;
+        
+    }
+</script>
+</html>

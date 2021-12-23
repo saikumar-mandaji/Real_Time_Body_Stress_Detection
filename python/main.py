@@ -18,7 +18,17 @@ def home():
     if request.method=="POST":
             return ""
 
-kwargs = {'host': '0.0.0.0', 'port': 8080, 'threaded': True, 'use_reloader': False, 'debug': True}
-if __name__ == '__main__':
-    threading.Thread(target=get_w).start()
-    threading.Thread(target=app.run, daemon=True, kwargs=kwargs).start()    
+@app.route('/signup',methods=["get","post"])
+def signup():
+    if request.method=="GET":
+        return render_template('signup.html')
+    if request.method=="POST":
+        print(request.form.get)
+
+        return ""
+
+# kwargs = {'host': '0.0.0.0', 'port': 8080, 'threaded': True, 'use_reloader': False, 'debug': True}
+# if __name__ == '__main__':
+#     threading.Thread(target=get_w).start()
+#     threading.Thread(target=app.run, daemon=True, kwargs=kwargs).start()    
+app.run(host = '0.0.0.0', port= 8080,debug= True)
