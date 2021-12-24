@@ -77,9 +77,9 @@ background-color: #2EE59D;
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" id="uname" name="uname">
             <label for="pwd">Password:</label>
-            <input type="password" placeholder="Enter Password"id="pwd1" name="pwd">
+            <input type="password" placeholder="Enter Password"id="pwd1" name="pwd1">
             <label for="pwd"></label>
-            <input type="password" placeholder="Confirm Password"id="pwd2" name="pwd">
+            <input type="password" placeholder="Confirm Password"id="pwd2" name="pwd2">
             <button type="button" onclick="return verify()">UPLOAD</button>
         </div>
     </form>
@@ -96,7 +96,7 @@ background-color: #2EE59D;
         else{
             if(pw1 == pw2){
                 console.log("got credentials");
-                //document.getElementById("fm").submit();
+                document.getElementById("fm").submit();
             }
             else{
                 alert("Invalid password");

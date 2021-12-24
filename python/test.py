@@ -1,22 +1,22 @@
-from flask import Flask,render_template,request
-import random
-import serial
-import threading
 import json
+data1 = {
+"saikumar":"saikumar123"
+}
 
-st = 0
-otpValue = 0
-id = 0
-
-com = 0
-ser = 0
-for i in range(0,256):
+def loadF(data):
     try:
-        ser = serial.Serial('COM'+str(i),9600)
-        print('COM'+str(i))
-        com = 'COM'+str(i)
-    except :
-        print("error")
-        pass
-
-print(com)
+        with open("user_db.json","w") as jsonFile:
+            json.dump(data,jsonFile)
+            return True
+    except:
+        return False
+def readF():
+    try:
+        f = open("user_db.json")
+        data = json.load(f)
+        f.close()
+        return data
+    except:
+        return False
+print(loadF(data1))
+print(readF())
