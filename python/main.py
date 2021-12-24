@@ -5,6 +5,23 @@ import threading
 import json
 
 
+def loadF(data):
+    try:
+        with open("user_db.json","w") as jsonFile:
+            json.dump(data,jsonFile)
+            return True
+    except:
+        return False
+def readF():
+    try:
+        f = open("user_db.json")
+        data = json.load(f)
+        f.close()
+        return data
+    except:
+        
+        return False
+
 def get_w():
     while 1:
         pass
@@ -23,7 +40,14 @@ def signup():
     if request.method=="GET":
         return render_template('signup.html')
     if request.method=="POST":
-        print(request.form.get)
+        user = request.form.get("uname")
+        pw =  request.form.get("pwd1")
+        dct = readF()
+        print(dct)
+        dct[user]=pw
+        loadF(dct)
+        print(dct)
+        #print(user,pw,request.form.get)
 
         return render_template('home.html')
 
