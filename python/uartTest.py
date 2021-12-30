@@ -7,9 +7,6 @@ import threading
 import json
 
 
-f = open("db.json")
-dct = json.load(f)
-print(dct['id'])
 l3 = 0
 st = 0
 com = ""
