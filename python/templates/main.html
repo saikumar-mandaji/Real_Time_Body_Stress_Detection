@@ -7,7 +7,9 @@ body {
   padding-top: 10px;
 }
 h1 {color:blue}
-
+a{
+  left: 40%;
+}
 button {
   width: 140px;
   height: 45px;
@@ -37,15 +39,40 @@ button:hover {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div style="text-align:center">
 <span">
-    <br>
-    <br>
-    <img src="{{ url_for('static', filename = 'images//signup.png') }}" alt="">
-    <h1><img src="{{ url_for('video_feed') }}" width="50%"></h1>
-	<br>
-    <br>
     <a href="/">
         <button href="#" class="button1">HOME</button>
     </a>
+    <br>
+    <br>
+    <div id="lable">
+    <h1>Temperature</h1>
+    <h1 id="temp"></h1>
+  </div>
+    <h1>BPM</h1>
+    <h1 id="bpm"></h1>
+    <h1>Body Resistane</h1>
+    <h1 id="res"></h1>
+	<br>
+    <br>
 </span>
 </body>
+<script>
+      setInterval(function load(){
+      var ft =fetch('/main', {
+            method: 'POST', // or 'PUT'
+			body:"post"
+			})
+		.then(response => response.json())
+		.then(data => {
+      document.getElementById('temp').innerHTML = data["Temp"]
+      document.getElementById('bpm').innerHTML = data["BPM"]
+      document.getElementById('res').innerHTML = data["Resistance"]
+        // console.log(data)
+		})
+		.catch((error) => {
+  			console.error('Error:', error);
+		});	
+    }
+, 2000);
+</script>
 </html>
