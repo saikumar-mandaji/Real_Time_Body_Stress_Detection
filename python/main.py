@@ -18,9 +18,9 @@ def readF():
         data = json.load(f)
         f.close()
         return data
-    except:
-        
-        return False
+    except Exception as e:
+        print(e)
+        return {}
 
 def get_w():
     while 1:
@@ -45,11 +45,24 @@ def signup():
         dct = readF()
         print(dct)
         dct[user]=pw
-        loadF(dct)
+        print(loadF(dct))
         print(dct)
-        #print(user,pw,request.form.get)
-
         return render_template('home.html')
+@app.route('/signin',methods=["get","post"])
+def signin():
+    if request.method=="GET":
+        return render_template('signin.html')
+    if request.method=="POST":
+        user,pw = request.data.decode("utf-8").split(",")
+        print(user,pw)
+        # user = request.form.get("uname")
+        # pw =  request.form.get("pwd")
+        dct = readF()
+        kys = dct.keys()
+        if user in kys :
+            if dct[user] == pw:return {"data":1}
+            else:return {"data":0}
+        return {"data":0}
 
 # kwargs = {'host': '0.0.0.0', 'port': 8080, 'threaded': True, 'use_reloader': False, 'debug': True}
 # if __name__ == '__main__':

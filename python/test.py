@@ -17,6 +17,6 @@ def readF():
         f.close()
         return data
     except:
-        return False
-print(loadF(data1))
-print(readF())
+        return {}
+#print(loadF(data1))
+print(type(readF()))
