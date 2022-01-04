@@ -4,8 +4,9 @@
     /*set border to the form*/
       body {
   background-color: #ffffffff;
-  padding-top: 50px;
+  width: 50%;
   align-content: center;
+  margin: auto;
 }
     form {
         border: 3px solid #f1f1f1;
@@ -80,11 +81,7 @@ h3{
     font-size: 150%;
     font-weight: 10%;
     color: #f10909;
-    text-shadow: 1px 1px 1px #919191,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
+    text-shadow:revert black;
 }
 </style>
   
@@ -94,6 +91,8 @@ h3{
         <button href="#" class="home">HOME</button>
         </a>
         <h3>LOG IN</h3>
+        <br>
+        <br>
         <img src="{{ url_for('static', filename = 'images//login.gif') }}" alt="">
     <form id="fm" method="POST" action="/signup" enctype="multipart/form-data">
         <div class="container">

@@ -34,24 +34,82 @@ button:hover {
   color: #fff;
   transform: translateY(-7px);
 }
+#temperature{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  
+}
+#pulse{
+
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+color: #000;
+background-color: #fff;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+text-align: center;
+position: relative;
+display: inline-block;
+}
+#bodyres{
+
+font-family: 'Roboto', sans-serif;
+font-size: 15px;
+color: #000;
+background-color: #fff;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+text-align: center;
+position: relative;
+display: inline-block;
+
+}
+img{
+  width: 100px;
+  height: 70px;
+  border-radius: 20%;
+}
+.main{
+  width: auto;
+  align-content: center;
+  margin: 10%;
+}
 </style>
 <body> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div style="text-align:center">
+<div class="main">
 <span">
     <a href="/">
         <button href="#" class="button1">HOME</button>
     </a>
     <br>
     <br>
-    <div id="lable">
+  <div id="temperature">
     <h1>Temperature</h1>
+    <img src="{{ url_for('static', filename = 'images//temp1.gif') }}" alt="">
     <h1 id="temp"></h1>
   </div>
-    <h1>BPM</h1>
+  <div id="pulse">
+    <h1>Pulse Rate</h1>
+    <img src="{{ url_for('static', filename = 'images//heartRate.gif') }}" alt="">
     <h1 id="bpm"></h1>
+  </div>
+  <div id="bodyres">
     <h1>Body Resistane</h1>
+    <img src="{{ url_for('static', filename = 'images//GSR1.png') }}" alt="">
     <h1 id="res"></h1>
+  </div>
 	<br>
     <br>
 </span>

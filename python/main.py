@@ -13,7 +13,16 @@ for i in range(0,256):
         com = 'COM'+str(i)
     except :
         pass
-print(com)
+#print(com)
+def check():
+    for i in range(0,256):
+        try:
+            ser1 = serial.Serial('COM'+str(i),9600)
+            print('COM'+str(i))
+            com = 'COM'+str(i)
+            return ser1
+        except :
+            pass
 
 def loadF(data):
     try:
@@ -36,11 +45,14 @@ def get_w():
     global st
     global dct
     while 1:
-        if st == 1:
-            data = ser.readline().decode("utf-8")
-            if('{"Temp":' in data):
-                dct = json.loads(data)
-                #print(dct)
+        try:
+            if st == 1:
+                data = ser.readline().decode("utf-8")
+                if('{"Temp":' in data):
+                    dct = json.loads(data)
+                    #print(dct)
+        except:
+            ser = check()
 
 
 
