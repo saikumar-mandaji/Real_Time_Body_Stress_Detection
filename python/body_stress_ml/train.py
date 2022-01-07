@@ -14,12 +14,12 @@ import pickle #To save the Trained Model
 #Multiplier are to scale all the values in similar range for increasing accuracy
 bpm_multiplier = 1
 temp_multiplier = 2
-sr_multiplier = 0.1
+sr_multiplier = 1
 
 def train_and_save_model(algo = 0):
     
     #Read the Dataset (csv file)
-    data = pd.read_csv("dataset.csv") # Make sure to have atleast 1000 rows in dataset
+    data = pd.read_csv("data.csv") # Make sure to have atleast 1000 rows in dataset
 
     X = list() #Empty list to stored structured Dataset after scaling using multiplier values
     for bpm,temp,sr in zip(data['BPM'].values.tolist(), data['Temp'].values.tolist(), data['SR'].values.tolist()):
@@ -60,4 +60,4 @@ def train_and_save_model(algo = 0):
     print("Model Saved")
 
 if __name__ == "__main__":
-    train_and_save_model()
+    train_and_save_model(0)
