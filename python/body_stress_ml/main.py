@@ -4,5 +4,5 @@ import check_stress
 
 
 #1 means normal and no stress
-condition = check_stress.check_stress(50,37,600)
+condition = check_stress.check_stress(72,37,600)
 print(condition)

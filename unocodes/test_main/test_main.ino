@@ -17,8 +17,9 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 PulseSensorPlayground pulseSensor;
 DynamicJsonDocument doc(1024);
- String data ="{\"Temp\":0.0,\"BPM\":0.0,\"Resistance\":0}";
+ String data ="{\"BPM\":0.0,\"Temp\":0.0,\"SR\":0}";
  JsonObject obj;
+  String output ="";
 void setup(void) 
 { 
  Serial.begin(9600); 
@@ -35,6 +36,7 @@ void setup(void)
 void loop(void) 
 { 
  int skinR = 1023-analogRead(resProbe);
+ skinR = map(skinR,0,1024,0,500);
  float myBPM = pulseSensor.getBeatsPerMinute();
  myBPM = myBPM/2.85;
  if(myBPM < 56)myBPM = 0;
@@ -43,8 +45,8 @@ void loop(void)
  sensors.requestTemperatures();
  obj[String("Temp")] = sensors.getTempCByIndex(0);
  obj[String("BPM")] = pulse;
- obj[String("Resistance")] =skinR; 
- String output;
+ obj[String("SR")] =skinR; 
+ output ="";
  serializeJson(doc, output);
  if(millis() >= time_now + period){
         time_now += period;
