@@ -2,15 +2,19 @@
 <html>
 <style>
     /*set border to the form*/
-      body {
-  background-color: #ffffffff;
+    /*set border to the form*/
+    body {
+        background-color: #ffffffff;
   width: 50%;
   align-content: center;
   margin: auto;
+
+  
 }
-    form {
-        border: 3px solid #f1f1f1;
-    }
+    /* form { */
+        /* border: 3px solid #f1f1f1; */
+
+    /* } */
     /*assign full width inputs*/
       
     input[type=text] ,
@@ -30,12 +34,19 @@
         width: 100px;
         position: sticky;
         text-size-adjust: 50%;
+        margin-top: 2%;
         
     }
 
 
-    
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+} 
 button {
+    margin-top: 2%;
   width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
@@ -65,12 +76,6 @@ background-color: #2EE59D;
   color: #fff;
   transform: translateY(7px);
 }
-img{
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-} 
 
 h3{
   position: absolute;
@@ -117,7 +122,7 @@ h3{
                 var rdata = jdata["data"]
                 if(rdata == 1){
 
-                    document.getElementById("dispay").innerHTML = "Verified"
+                    window.location = "/main";
                 }
                else{
    

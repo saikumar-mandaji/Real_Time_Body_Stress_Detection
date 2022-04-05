@@ -38,7 +38,7 @@ void loop(void)
  int skinR = 1023-analogRead(resProbe);
  skinR = map(skinR,0,1024,0,500);
  float myBPM = pulseSensor.getBeatsPerMinute();
- myBPM = myBPM/2.85;
+ myBPM = myBPM-20;
  if(myBPM < 56)myBPM = 0;
  if(myBPM > 160)myBPM = 160;
  if (pulseSensor.sawStartOfBeat())pulse = myBPM;
