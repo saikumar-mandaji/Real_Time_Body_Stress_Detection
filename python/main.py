@@ -6,7 +6,7 @@ import check_stress
 
 ser = 0
 st = 0
-dct = 0
+dct = {'Temp': 47, 'BPM': 140, 'SR': 30}
 com = 0
 for i in range(0,256):
     try:
@@ -108,7 +108,7 @@ def main():
         #print(data)
         if data == 'predict':
             if st == 1:
-                condition =  check_stress.check_stress(60,30,20)#check_stress.check_stress(dct['BPM'],dct["Temp"],dct["SR"])
+                condition = check_stress.check_stress(dct['BPM'],dct["Temp"],dct["SR"])
                 print(condition,dct)
                 if condition == -1:return {"data":1}
                 if condition == 1:return {"data":2}
@@ -119,7 +119,7 @@ def main():
             try:
                 #print(dct,st)
                 retdct = dct
-                retdct["Temp"] = round((retdct["Temp"]*1.8)+32,2)
+                #retdct["Temp"] = round((retdct["Temp"]*1.8)+32,2)
                 return retdct
             except:
                 pass

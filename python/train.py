@@ -70,5 +70,5 @@ def train_and_save_model(algo = 0):
     print("Model Saved")
 
 if __name__ == "__main__":
-    #train_and_save_model(0)
-    plotThedataset()
+    train_and_save_model(0)
+    #plotThedataset()
