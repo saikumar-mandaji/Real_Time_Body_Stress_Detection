@@ -1,5 +1,5 @@
-# bodyStressDetection
-Body Stress detection with realtime sensors
+
+# Body Stress detection with realtime sensors
 ![1](https://user-images.githubusercontent.com/55397886/176636090-496043da-50b8-47e1-bb34-360bbc3e18da.png)
 ![2](https://user-images.githubusercontent.com/55397886/176636104-a00d7e45-d5c8-4455-b5c8-c80bf5f1a2a8.png)
 ![3](https://user-images.githubusercontent.com/55397886/176636106-b666ead2-7eff-480b-ab3e-7cc83c92fbb8.png)
