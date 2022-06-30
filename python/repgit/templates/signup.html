@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<style>
+    /*set border to the form*/
+      body {
+        background-color: #ffffffff;
+  width: 50%;
+  align-content: center;
+  margin: auto;
+
+  
+}
+    /* form { */
+        /* border: 3px solid #f1f1f1; */
+
+    /* } */
+    /*assign full width inputs*/
+      
+    input[type=text] ,
+    input[type=password] 
+    {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgb(41, 38, 38);
+        box-sizing: border-box;
+    }
+    .home {
+        background-color: #af744c;
+        margin: 0;
+        cursor: pointer;
+        width: 100px;
+        position: sticky;
+        text-size-adjust: 50%;
+        margin-top: 2%;
+        
+    }
+
+
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+} 
+button {
+    margin-top: 2%;
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+button:active{
+background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(7px);
+}
+
+h3{
+  position: absolute;
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 150%;
+    font-weight: 10%;
+    color: #f10909;
+    text-shadow:revert black;
+}
+</style>
+  
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="/">
+        <button href="#" class="home">HOME</button>
+        <h3>LOG IN</h3>
+        <br>
+        <br>
+        <br>
+        </a>
+        <br>
+        <br>
+        <img src="{{ url_for('static', filename = 'images//signup.png') }}" alt="">
+    <form id="fm" method="POST" action="/signup" enctype="multipart/form-data">
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" name="uname">
+            <label for="pwd">Password:</label>
+            <input type="password" placeholder="Enter Password"id="pwd1" name="pwd1">
+            <label for="pwd"></label>
+            <input type="password" placeholder="Confirm Password"id="pwd2" name="pwd2">
+            <button type="button" onclick="return verify()">UPLOAD</button>
+        </div>
+    </form>
+</body>  
+<script>
+    function verify(){
+        var user = document.getElementById("uname").value;
+        var pw1 = document.getElementById("pwd1").value;
+        var pw2 = document.getElementById("pwd2").value;
+        if(user.length < 1 || pw1.length < 4 || pw2.length < 4 ){
+            alert("Invalid Username or password");
+            location.reload();
+        }
+        else{
+            if(pw1 == pw2){
+                console.log("got credentials");
+                document.getElementById("fm").submit();
+            }
+            else{
+                alert("Invalid password");
+                location.reload();
+            }
+        }
+        
+        document.getElementById("uname").value = "";
+        document.getElementById("pwd1").value = "";
+        document.getElementById("pwd2").value = "";
+        
+    }
+</script>
+</html>

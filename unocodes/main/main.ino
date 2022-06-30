@@ -5,7 +5,7 @@
 #include <ArduinoJson.h>
 
 
-#define ONE_WIRE_BUS 5
+#define ONE_WIRE_BUS 8
 #define resProbe A0 
 const int PulseWire = A1; 
 int Threshold = 720;
@@ -36,6 +36,8 @@ void setup(void)
 void loop(void) 
 { 
  int skinR = 1023-analogRead(resProbe);
+ skinR = map(skinR,95,1023,0,100);
+ if(skinR < 0)skinR = 0;
  int myBPM = pulseSensor.getBeatsPerMinute();
  if (pulseSensor.sawStartOfBeat())pulse = myBPM;
  sensors.requestTemperatures();

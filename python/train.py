@@ -9,12 +9,22 @@ from sklearn.model_selection import train_test_split #To Divide Dataset into Tra
 from sklearn.svm import OneClassSVM
 from sklearn.ensemble import IsolationForest
 
+import matplotlib.pyplot as plt
+
 import pickle #To save the Trained Model
 
 #Multiplier are to scale all the values in similar range for increasing accuracy
 bpm_multiplier = 1
 temp_multiplier = 2
 sr_multiplier = 1
+
+
+def plotThedataset():
+    data = pd.read_csv("data.csv")
+    plt.plot(data['BPM'])
+    plt.plot(data['SR'])
+    plt.plot(data['Temp'])
+    plt.show()
 
 def train_and_save_model(algo = 0):
     
@@ -60,4 +70,5 @@ def train_and_save_model(algo = 0):
     print("Model Saved")
 
 if __name__ == "__main__":
-    train_and_save_model(0)
+    #train_and_save_model(0)
+    plotThedataset()
